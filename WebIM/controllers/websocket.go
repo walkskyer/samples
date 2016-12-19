@@ -64,6 +64,7 @@ func (this *WebSocketController) Join() {
 	// Join chat room.
 	Join(uname, ws)
 	defer Leave(uname)
+	defer this.ServeJSON()
 
 	// Message receive loop.
 	for {
